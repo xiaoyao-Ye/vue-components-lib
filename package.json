@@ -1,0 +1,44 @@
+{
+  "name": "vue-components-lib",
+  "version": "0.0.0",
+  "description": "",
+  "workspaces": [
+    "packages",
+    "playground",
+    "docs",
+    "build"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "commit": "git-cz",
+    "commit:origin": "git pull && git add . && git-cz && git push",
+    "lint": "prettier --write \"**/*.{js,ts,json,vue,md}\"",
+    "lint-staged": "lint-staged",
+    "ct": "bash ./script/template.sh",
+    "clean": "rimraf ./dist",
+    "dev": "pnpm run -C playground dev",
+    "docs:dev": "pnpm run -C docs docs:dev",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "git-cz": "^4.9.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.0",
+    "vitest": "^0.29.3",
+    "vue": "^3.2.47"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
