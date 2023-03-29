@@ -2,7 +2,9 @@ import superEjs from 'super-ejs';
 import { pascalCase, paramCase } from 'change-case';
 import path from 'path';
 import fsExtra from 'fs-extra';
-// import { config } from '../constants/config';
+// @ts-ignore
+// import { config } from '../constants/config.ts';
+// import config from '../constants/config.ts';
 import config from '../constants/index.js';
 
 const logInfo = (...args: string[]): void => console.info('\x1B[33m', ...args, '\x1B[0m');
