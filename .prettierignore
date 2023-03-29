@@ -1,5 +1,6 @@
 package-lock.json
 /dist/*
+/packages/add-component/template
 
 /node_modules/**
 /public/*

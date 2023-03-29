@@ -1,9 +1,8 @@
 {
   "name": "vue-components-lib",
-  "version": "0.0.0",
-  "description": "",
+  "private": true,
   "workspaces": [
-    "packages",
+    "packages/*",
     "playground",
     "docs",
     "build"
@@ -15,8 +14,8 @@
     "commit:origin": "git pull && git add . && git-cz && git push",
     "lint": "prettier --write \"**/*.{js,ts,json,vue,md}\"",
     "lint-staged": "lint-staged",
-    "ct": "bash ./script/template.sh",
     "clean": "rimraf ./dist",
+    "new": "pnpm run -C packages/add-component new",
     "dev": "pnpm run -C playground dev",
     "docs:dev": "pnpm run -C docs docs:dev",
     "test": "vitest",
@@ -29,7 +28,10 @@
     "git-cz": "^4.9.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "rimraf": "^4.4.1",
+    "sass": "^1.60.0",
     "simple-git-hooks": "^2.8.0",
+    "typescript": "^4.9.3",
     "vitest": "^0.29.3",
     "vue": "^3.2.47"
   },

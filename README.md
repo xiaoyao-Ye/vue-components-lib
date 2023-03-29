@@ -1,5 +1,18 @@
 # vue-components-lib
 
+## usage
+
+`packages/constants/index.js` 中配置组件前缀
+
+```JavaScript
+module.exports = {
+  prefixU: 'EL',
+  prefixL: 'el',
+}
+// <ELButton />
+// <el-button></el-button>
+```
+
 ## TODO
 
 - [ ] 创建项目结构
