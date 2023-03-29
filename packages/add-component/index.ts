@@ -10,9 +10,7 @@ const logError = (...args: string[]): void => console.error('\x1B[31m', ...args,
 
 const updatedFiles: string[] = [];
 const compName: string = fetchCompName();
-console.log('compName', compName);
 const displayName = `${pascalCase(compName)}`;
-console.log('displayName', displayName);
 
 const __dirname: string = path.resolve();
 const outputDir: string = path.resolve(__dirname, '../components', compName);
@@ -49,7 +47,6 @@ function fetchCompName(): string {
 
   if (input.match(/^[a-zA-Z]+?[-|_|a-zA-Z0-9]*?$/) && !input.endsWith('-') && !input.endsWith('_')) {
     const compName: string = paramCase(input);
-    console.log('compName1', compName);
     return compName;
   }
 
